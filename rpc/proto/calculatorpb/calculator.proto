@@ -1,0 +1,31 @@
+syntax = "proto3";
+option go_package = ".;calculatorpb";
+package calculatorpb;
+
+
+service CalculatorService {
+  rpc Calculator(CalculateRequest) returns (CalculateResponse) {}
+}
+
+
+enum OPERATOR {
+  DEFAULT_OPERATOR = 0;
+  OPERATOR_ADD = 1;
+  OPERATOR_MULTIPLY = 2;
+  OPERATOR_DIVIDE = 3;
+  OPERATOR_SUBTRACT = 4;
+}
+
+message CalculateRequest { 
+  OPERATOR operator = 1;
+  OPERANDS operands = 2; 
+}
+
+message OPERANDS { 
+  double number_1 = 1; 
+  double number_2 = 2; 
+}
+
+message CalculateResponse { 
+  double result = 1;
+}
