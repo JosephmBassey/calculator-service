@@ -1,0 +1,8 @@
+docker-compose.yml
+makefile
+.env
+.env.example
+.gitignore
+.git
+pull_request_template.md
+README.md
