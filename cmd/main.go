@@ -21,6 +21,8 @@ import (
 
 	"github.com/josephmbassey/calculator-service/config"
 	"github.com/josephmbassey/calculator-service/internals/http/starter"
+	"github.com/josephmbassey/calculator-service/rpc/proto/calculatorpb"
+	"github.com/josephmbassey/calculator-service/services/calculatorservice"
 )
 
 func main() {
@@ -36,6 +38,7 @@ func main() {
 
 	// =========================================================================
 	// Initialize Services
+	calculatorSvc, err := calculatorservice.NewService(logger)
 
 	// =========================================================================
 
@@ -56,6 +59,9 @@ func main() {
 		grpc.StatsHandler(&ocgrpc.ServerHandler{IsPublicEndpoint: false}),
 	}
 	grpcServer := grpc.NewServer(grpcOpts...)
+
+	calculatorpb.RegisterCalculatorServiceServer(grpcServer, calculatorservice.NewGRPCHandler(calculatorSvc))
+
 	reflection.Register(grpcServer)
 	grpc_prometheus.Register(grpcServer)
 
