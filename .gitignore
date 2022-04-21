@@ -48,4 +48,3 @@ _testmain.go
 .env.enc
 .env.staging.enc
 .env.prod.enc
-vendor
