@@ -10,6 +10,10 @@ proto: ## Compile proto
     --go-grpc_out=. --go-grpc_opt=paths=source_relative \
     rpc/proto/*/*.proto
 
+.PHONY: test
+test:
+	go test -v ./services/calculatorservice/calculator_test.go
+
 .PHONY: build
 build:
 	go build -mod=vendor -v -o $(BINARY) ./cmd
