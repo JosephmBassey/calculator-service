@@ -1,6 +1,6 @@
 # SHELL := /bin/bash
 export
-BINARY=calculator-service
+BINARY=server
 include develop.env
 
 

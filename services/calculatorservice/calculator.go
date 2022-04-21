@@ -8,6 +8,7 @@ import (
 	"github.com/josephmbassey/calculator-service/rpc/proto/calculatorpb"
 )
 
+//Calculator compute and return the result base on the supplied operator and operands
 func (c *Calculator) Calculator(ctx context.Context, operator calculatorpb.OPERATOR, operands *calculatorpb.OPERANDS) (result float64, err error) {
 
 	switch operator {

@@ -19,7 +19,7 @@ func NewGRPCHandler(service Service) *GRPCHandler {
 	}
 }
 
-// Calculator ...
+// Calculator is a gRPC handler...
 func (h *GRPCHandler) Calculator(ctx context.Context, req *calculatorpb.CalculateRequest) (*calculatorpb.CalculateResponse, error) {
 	result, err := h.service.Calculator(ctx, req.Operator, req.Operands)
 	if err != nil {
