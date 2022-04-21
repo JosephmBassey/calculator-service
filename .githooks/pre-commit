@@ -9,7 +9,6 @@ if [[ $STAGED_GO_FILES == "" ]]; then
     echo "No Go Files to Update"
 ## otherwise we can do stuff with these changed go files
 else
-    echo "pre commit ..."
     for file in $STAGED_GO_FILES; do
         ## format our file
         go fmt $file

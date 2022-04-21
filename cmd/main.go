@@ -15,12 +15,11 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
-	"github.com/greyfinance/grey-go-libs/http/handler/version"
-	"github.com/greyfinance/grey-go-libs/http/httputils"
-	"github.com/greyfinance/grey-go-libs/log/levelfilter"
-
 	"github.com/josephmbassey/calculator-service/config"
+	"github.com/josephmbassey/calculator-service/internals/http/handler/version"
+	"github.com/josephmbassey/calculator-service/internals/http/httputils"
 	"github.com/josephmbassey/calculator-service/internals/http/starter"
+	"github.com/josephmbassey/calculator-service/internals/logger/levelfilter"
 	"github.com/josephmbassey/calculator-service/rpc/proto/calculatorpb"
 	"github.com/josephmbassey/calculator-service/services/calculatorservice"
 )
